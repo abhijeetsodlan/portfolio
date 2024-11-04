@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'portfolio'; 
+  src: url('./assets/file.woff2'); 
+}
+
+@font-face {
+  font-family: 'portfolio2'; 
+  src: url('./assets/file2.woff2'); 
+}
+@font-face {
+  font-family: 'portfolio3'; 
+  src: url('./assets/file3.woff2'); 
+}
+@font-face {
+  font-family: 'portfolio4'; 
+  src: url('./assets/file4.woff2'); 
+}
+@font-face {
+  font-family: 'portfolio5'; 
+  src: url('./assets/file5.woff2'); 
+}
