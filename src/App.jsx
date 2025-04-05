@@ -79,7 +79,7 @@ const App = () => {
                   </div>
                   <div className="mt-3 flex items-center text-sm text-gray-500">
                     <span className="inline-block w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
-                    <span>35 active users</span>
+                    <span>10+ active users</span>
                   </div>
                 </div>
               </a>
