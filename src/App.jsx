@@ -86,7 +86,7 @@ const App = () => {
                       <h3 className="font-medium text-white text-lg group-hover:text-blue-400 transition-colors duration-200">
                         SpaceInvaders
                       </h3>
-                      <p className="text-gray-400 mt-1">Classic space shooter game with modern touches</p>
+                      <p className="text-gray-400 mt-1">Classic space shooter game</p>
                     </div>
                     <FaExternalLinkAlt className="text-gray-500 group-hover:text-blue-400 mt-1 transition-colors duration-200" />
                   </div>
