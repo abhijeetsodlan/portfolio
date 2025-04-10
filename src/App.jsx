@@ -1,4 +1,3 @@
-// App.jsx
 import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaRegEnvelope, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -49,11 +48,6 @@ const App = () => {
                 <span className="text-blue-400 mr-2">▹</span>
                 <span>Let's talk how can we work together</span>
               </li>
-              {/* <li className="pt-2">
-                <a href="/resume.pdf" className="text-blue-400 hover:text-blue-300 transition-colors duration-200 flex items-center">
-                  View my resume <FaExternalLinkAlt className="ml-1" size={12} />
-                </a>
-              </li> */}
             </ul>
           </div>
 
@@ -79,7 +73,22 @@ const App = () => {
                   </div>
                   <div className="mt-3 flex items-center text-sm text-gray-500">
                     <span className="inline-block w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
-                    <span>10+ active users</span>
+                    <span>15+ active users</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="https://abhijeetsodlan.github.io/SpaceInvaders/" target="_blank" rel="noopener noreferrer" 
+                 className="block group transition-all duration-300">
+                <div className="p-5 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-900/10 transition-all duration-300">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-medium text-white text-lg group-hover:text-blue-400 transition-colors duration-200">
+                        SpaceInvaders
+                      </h3>
+                      <p className="text-gray-400 mt-1">Classic space shooter game with modern touches</p>
+                    </div>
+                    <FaExternalLinkAlt className="text-gray-500 group-hover:text-blue-400 mt-1 transition-colors duration-200" />
                   </div>
                 </div>
               </a>
