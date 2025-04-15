@@ -92,6 +92,21 @@ const App = () => {
                   </div>
                 </div>
               </a>
+
+              <a href="https://sharecodee.netlify.app/" target="_blank" rel="noopener noreferrer" 
+                 className="block group transition-all duration-300">
+                <div className="p-5 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-900/10 transition-all duration-300">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-medium text-white text-lg group-hover:text-blue-400 transition-colors duration-200">
+                       ShareCode
+                      </h3>
+                      <p className="text-gray-400 mt-1">Convert your code snippets into image</p>
+                    </div>
+                    <FaExternalLinkAlt className="text-gray-500 group-hover:text-blue-400 mt-1 transition-colors duration-200" />
+                  </div>
+                </div>
+              </a>
             </div>
           </section>
         </div>
