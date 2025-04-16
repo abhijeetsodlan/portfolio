@@ -7,7 +7,7 @@ const App = () => {
       <div className="max-w-2xl mx-auto bg-gray-900 rounded-xl shadow-2xl overflow-hidden p-8 border border-gray-800">
         <div className="space-y-8">
           <header className="space-y-3">
-            <h1 className="text-3xl font-bold text-white bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold  bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Hi, I'm Abhijeet Sodlan
             </h1>
             
