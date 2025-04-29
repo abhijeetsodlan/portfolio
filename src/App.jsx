@@ -11,17 +11,18 @@ const App = () => {
               <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Hi, I'm Abhijeet Sodlan
               </h1>
-              <div className="flex space-x-4">
-                <a href="https://github.com/abhijeetsodlan" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all duration-300">
-                  <FaGithub size={22} />
-                </a>
-                <a href="https://www.linkedin.com/in/abhijeet-sodlan-82753533b/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all duration-300">
-                  <FaLinkedin size={22} />
-                </a>
-                <a href="https://twitter.com/AbhijeetSodlan" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all duration-300">
-                  <FaTwitter size={22} />
-                </a>
-              </div>
+            </div>
+
+            <div className="flex justify-normal space-x-4">
+              <a href="https://github.com/abhijeetsodlan" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all duration-300">
+                <FaGithub size={22} />
+              </a>
+              <a href="https://www.linkedin.com/in/abhijeet-sodlan-82753533b/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all duration-300">
+                <FaLinkedin size={22} />
+              </a>
+              <a href="https://twitter.com/AbhijeetSodlan" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all duration-300">
+                <FaTwitter size={22} />
+              </a>
             </div>
 
             <div className="flex items-center text-gray-300 space-x-2">
@@ -34,7 +35,7 @@ const App = () => {
 
           <div className="space-y-4">
             <p className="text-lg text-gray-300">
-            I'm a web and mobile app developer who loves building fast and useful products. Let’s connect and chat about how we can work on something awesome together.
+              I'm a web and mobile app developer who loves building fast and useful products. Let’s connect and chat about how we can work on something awesome together.
             </p>
           </div>
 
@@ -117,8 +118,6 @@ const App = () => {
                   </div>
                 </div>
               </a>
-
-            
             </div>
           </section>
         </div>
