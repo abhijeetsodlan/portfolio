@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaRegEnvelope, FaExternalLinkAlt } fro
 const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black py-12 px-4 sm:px-6 lg:px-8 font-sans">
-      <div className="max-w-2xl mx-auto shadow-2xl overflow-hidden p-8 ">
+      <div className="max-w-2xl mx-auto shadow-2xl border border-gray-400 rounded-2xl overflow-hidden p-8 ">
         <div className="space-y-8">
           <header className="space-y-3">
             <div className="flex justify-between items-center">
