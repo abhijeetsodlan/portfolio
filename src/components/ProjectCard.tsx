@@ -1,37 +1,42 @@
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import prelistLogo from '../../public/images/prelistLogo.png'
+import codetoimgLogo from '../../public/images/codetoimgLogo.png'
+import regretsLogo from '../../public/images/regretsLogo.png'
+import spaceinvadersLogo from '../../public/images/spaceinvadersLogo.png'
+import gojobtodayLogo from '../../public/images/gojobtodayLogo.png'
 
 const projects = [
   {
-    image: "https://source.unsplash.com/random/40x40?tech",
-    title: "preList.live",
-    role: "Waitlist Builder (No Backend)",
+    image: prelistLogo,
+    title: "prelist.live",
+    role: "Tool for founders and businesses — easily collect waitlist emails with no backend setup required.",
     link: "https://prelist.netlify.app",
     status: "Building",
   },
   {
-    image: "https://source.unsplash.com/random/40x40?ai",
-    title: "GoJobToday",
-    role: "AI Job Platform",
+    image: gojobtodayLogo,
+    title: "GoJob.today",
+    role: "An AI-powered job platform that automatically applies to the best-matching job openings on your behalf — or explore jobs manually in a fun, swipe-based interface like reels. Swipe right to apply instantly.",
     link: "https://gojobtoday.netlify.app",
     status: "Building",
   },
   {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyRqV1aguhOOKSJCzObA65lMxK15bGqgyqoA&s",
+    image: regretsLogo,
     title: "regrets.in",
-    role: "Anonymous Sharing Platform",
+    role: "A platform where people anonymously share their regrets, read others' stories, and engage through likes, replies, and shares.",
     link: "https://regrets.in",
   },
   {
-    image: "https://source.unsplash.com/random/40x40?code",
+    image: codetoimgLogo,
     title: "ShareCode",
     role: "Code to Image Tool",
     link: "https://sharecodee.netlify.app/",
   },
   {
-    image: "https://source.unsplash.com/random/40x40?space",
+    image: spaceinvadersLogo,
     title: "SpaceInvaders",
-    role: "Classic Game",
+    role: "Classic shooting Game",
     link: "https://abhijeetsodlan.github.io/SpaceInvaders/",
   },
 ];
@@ -42,31 +47,37 @@ export default function ProjectList() {
       <h2 className="text-2xl font-bold text-white mb-8">Projects</h2>
       <div className="space-y-7">
         {projects.map((project, index) => (
-          <div key={index} className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-12 h-12 rounded-md object-cover border border-gray-700"
-              />
-              <div>
-                <h3 className="text-white font-semibold">{project.title}</h3>
-                <p className="text-gray-400 text-sm">{project.role}</p>
-                {project.status === "Building" && (
-                  <span className="text-yellow-400 text-xs font-medium">Building</span>
-                )}
+          <a
+          key={index}
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block p-4 rounded-lg hover:bg-[#1a1a1a] transition-colors"
+        >
+          <div className="flex items-start gap-4">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-12 h-12 rounded-md object-cover border border-gray-700 shrink-0"
+            />
+        
+            <div className="flex-1 space-y-1">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-white font-semibold">{project.title}</h3>
+                </div>
+                <FaExternalLinkAlt className="text-gray-400 mt-1 shrink-0" />
               </div>
+        
+              <p className="text-gray-400 text-sm">{project.role}</p>
+        
+              {project.status === "Building" && (
+                <span className="text-yellow-400 text-xs font-medium">Building</span>
+              )}
             </div>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition"
-              title="Visit Project"
-            >
-              <FaExternalLinkAlt />
-            </a>
           </div>
+        </a>
+        
         ))}
       </div>
     </section>
