@@ -58,7 +58,7 @@ export default function HeaderSection() {
 
             {/* Description */}
             <p className="text-gray-400 text-md leading-relaxed max-w-3xl">
-              I'm 21, and I enjoy building web and mobile apps. I have 1 year of
+              I'm 21, and I enjoy building web and mobile apps. I have a year of
               experience working with React Native, and I’ve also built optimized
               backends using Laravel. Outside of tech, I really enjoy farming,
               tractors, and reading — especially books by Osho (<em>oshopaglu</em>).
