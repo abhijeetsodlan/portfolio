@@ -45,7 +45,7 @@ export default function ProjectList() {
   return (
     <section className=" rounded-2xl p-6 sm:p-10  ">
       <h2 className="text-2xl font-bold text-white mb-8">Projects</h2>
-      <div className="space-y-7">
+      <div className="space-y-7"> 
         {projects.map((project, index) => (
           <a
           key={index}
