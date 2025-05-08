@@ -74,7 +74,7 @@ export default function ProjectList() {
               {project.status === "Building" && (
                 <span className="text-yellow-400 text-xs font-medium">Building</span>
               )}
-            </div>
+            </div> 
           </div>
         </a>
         
