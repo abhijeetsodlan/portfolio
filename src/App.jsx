@@ -4,6 +4,7 @@ import ProjectCard from "./components/ProjectCard";
 import ExperienceSection from "./components/ExperienceSection";
 import GitHubStats from "./components/GitHubStats";
 import AchievementsSection from "./components/AchievementsSection";
+import GithubContributionsSection from "./components/GithubContributionsSection";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <HeaderSection />
         <ProjectCard/>
         <AchievementsSection />
+        <GithubContributionsSection />
         <ExperienceSection />
       </div>
       <footer className="text-center text-gray-500 text-sm py-6">
