@@ -1,46 +1,34 @@
 import React, { useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-// Local images
-import prelistLogo from "../../public/images/prelistLogo.png";
-import codetoimgLogo from "../../public/images/codetoimgLogo.png";
-import regretsLogo from "../../public/images/regretsLogo.png";
-import spaceinvadersLogo from "../../public/images/spaceinvadersLogo.png";
-import gojobtodayLogo from "../../public/images/gojobtodayLogo.png";
+// Local images (served from /public)
 
 const projects = [
   {
-    image: prelistLogo,
+    image: "/images/prelistLogo.png",
     title: "prelist.live",
-    role: "Tool for founders and businesses — easily collect waitlist emails with no backend setup required.",
+    role: "Tool for founders and businesses - easily collect waitlist emails with no backend setup required.",
     link: "https://prelist.netlify.app",
     status: "Building",
     type: "personal",
   },
   {
-    image: gojobtodayLogo,
-    title: "GoJob.today",
-    role: "An AI-powered job platform that automatically applies to the best-matching job openings on your behalf — or explore jobs manually in a fun, swipe-based interface like reels.",
-    link: "https://gojobtoday.netlify.app",
-    status: "Building",
-    type: "personal",
-  },
-  {
-    image: regretsLogo,
+    image: "/images/regretsLogo.png",
     title: "regrets.in",
     role: "A platform where people anonymously share their regrets, read others' stories, and engage through likes, replies, and shares.",
     link: "https://regrets.in",
+    status: "Temporarily Closed",
     type: "personal",
   },
   {
-    image: codetoimgLogo,
+    image: "/images/codetoimgLogo.png",
     title: "ShareCode",
     role: "Code to Image Tool",
     link: "https://sharecodee.netlify.app/",
     type: "personal",
   },
   {
-    image: spaceinvadersLogo,
+    image: "/images/spaceinvadersLogo.png",
     title: "SpaceInvaders",
     role: "Classic shooting Game",
     link: "https://abhijeetsodlan.github.io/SpaceInvaders/",
@@ -51,6 +39,21 @@ const projects = [
     title: "AC5D Construction",
     role: "An app that connects users with general and real estate contractors, streamlining property browsing, project posting, and professional hiring.",
     link: "https://apps.apple.com/in/app/ac5d-construction/id6744269662",
+    type: "client",
+  },
+  {
+    image: "/images/responderLogo.webp",
+    title: "Wellness Responder",
+    role: "Mobile app for improved school communication and incident reporting. Tech Stack: React Native, Laravel. Push notifications and role-based access control.",
+    link: "https://apps.apple.com/us/app/wellness-responder/id1574957321",
+    type: "client",
+  },
+  {
+    image: "/images/divineLogo.png",
+    title: "Divine Lightfoot App",
+    role: "Wellness-focused app improving engagement with health-related services. Tech Stack: React Native, Laravel. Built scalable mobile screens and integrated backend APIs. Coming soon.",
+    status: "Coming Soon",
+    link: "#",
     type: "client",
   },
 ];
@@ -100,7 +103,7 @@ export default function ProjectList() {
           >
             <div className="flex items-start gap-4">
               <img
-                src={typeof project.image === "string" ? project.image : project.image.src}
+                src={project.image}
                 alt={project.title}
                 className="w-12 h-12 rounded-md object-cover border border-gray-700 shrink-0"
               />
@@ -116,6 +119,12 @@ export default function ProjectList() {
                 {project.status === "Building" && (
                   <span className="text-yellow-400 text-xs font-medium">Building</span>
                 )}
+                {project.status === "Coming Soon" && (
+                  <span className="text-yellow-400 text-xs font-medium">Coming Soon</span>
+                )}
+                {project.status === "Temporarily Closed" && (
+                  <span className="text-red-400 text-xs font-medium">Temporarily Closed</span>
+                )}
               </div>
             </div>
           </a>
@@ -124,3 +133,5 @@ export default function ProjectList() {
     </section>
   );
 }
+
+

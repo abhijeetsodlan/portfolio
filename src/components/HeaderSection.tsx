@@ -42,7 +42,7 @@ export default function HeaderSection() {
                 <FaGithub />
               </a>
               <a
-                href="mailto:abhijeetsodlan7@gmail.com"
+                href="mailto:abhijeet.pushingcode@gmail.com"
                 className="hover:text-white transition"
               >
                 <FaRegEnvelope />
@@ -56,13 +56,28 @@ export default function HeaderSection() {
               </a>
             </div>
 
+           
+
             {/* Description */}
             <p className="text-gray-400 text-md leading-relaxed max-w-3xl">
-              I'm 21, and I enjoy building web and mobile apps. I have a year of
-              experience working with React Native, and I’ve also built optimized
-              backends using Laravel. Outside of tech, I really enjoy farming,
-              tractors, and reading — especially books by Osho (<em>oshopaglu</em>).
+              I’m 22 with 1.5+ years of experience building web and mobile apps.
+              I build full-stack web applications using Next.js and Express.js,
+              and mobile apps with React Native. Outside of tech, I enjoy
+              farming, tractors, and reading—especially books by Osho. (
+              <em>oshopaglu</em>).
             </p>
+
+             {/* Resume */}
+            <div>
+              <a
+                href="/Abhijeet_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
+              >
+                View Resume
+              </a>
+            </div>
           </div>
 
           {/* Profile Image */}

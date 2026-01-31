@@ -3,6 +3,7 @@ import HeaderSection from "./components/HeaderSection";
 import ProjectCard from "./components/ProjectCard";
 import ExperienceSection from "./components/ExperienceSection";
 import GitHubStats from "./components/GitHubStats";
+import AchievementsSection from "./components/AchievementsSection";
 
 const App = () => {
   return (
@@ -18,10 +19,11 @@ const App = () => {
       <div className="max-w-4xl mx-auto space-y-10">
         <HeaderSection />
         <ProjectCard/>
+        <AchievementsSection />
         <ExperienceSection />
       </div>
       <footer className="text-center text-gray-500 text-sm py-6">
-    © 2025 
+    © 2026
     </footer>
     </div>
   );
