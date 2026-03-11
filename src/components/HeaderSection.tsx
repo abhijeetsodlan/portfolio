@@ -7,88 +7,67 @@ import {
   FaGithub,
 } from "react-icons/fa6";
 
+const socials = [
+  { href: "https://twitter.com/AbhijeetSodlan",                        icon: <FaXTwitter />,    label: "Twitter"   },
+  { href: "https://www.linkedin.com/in/abhijeet-sodlan-82753533b/",    icon: <FaLinkedin />,    label: "LinkedIn"  },
+  { href: "https://github.com/abhijeetsodlan",                         icon: <FaGithub />,      label: "GitHub"    },
+  { href: "mailto:abhijeet.pushingcode@gmail.com",                     icon: <FaRegEnvelope />, label: "Email"     },
+  { href: "https://www.instagram.com/abhijeetsodlan",                  icon: <FaInstagram />,   label: "Instagram" },
+];
+
 export default function HeaderSection() {
   return (
     <section className="rounded-2xl p-6 sm:p-10">
-      <div className="space-y-6">
-        {/* Heading */}
-        <div className="flex flex-col md:flex-row items-center gap-6">
-          <div className="flex-1 space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white flex items-center gap-2">
-              Hi, I'm Abhijeet <span className="text-4xl">👋</span>
-            </h1>
+      <div className="space-y-5">
+          {/* Heading */}
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white flex items-center gap-3 animate-fade-in-up">
+            Hi, I'm Abhijeet
+            <span
+              className="text-4xl select-none"
+              style={{ display: "inline-block", animation: "fadeInUp 0.6s 0.2s cubic-bezier(0.22,1,0.36,1) both" }}
+            >
+              👋
+            </span>
+          </h1>
 
-            {/* Social Icons */}
-            <div className="flex gap-5 text-gray-400 text-xl">
+          {/* Social Icons */}
+          <div className="flex gap-4 text-lg animate-fade-in-up delay-200 text-gray-400 dark:text-gray-500">
+            {socials.map(({ href, icon, label }) => (
               <a
-                href="https://twitter.com/AbhijeetSodlan"
-                target="_blank"
-                className="hover:text-white transition"
-              >
-                <FaXTwitter />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/abhijeet-sodlan-82753533b/"
-                target="_blank"
-                className="hover:text-white transition"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://github.com/abhijeetsodlan"
-                target="_blank"
-                className="hover:text-white transition"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="mailto:abhijeet.pushingcode@gmail.com"
-                className="hover:text-white transition"
-              >
-                <FaRegEnvelope />
-              </a>
-              <a
-                href="https://www.instagram.com/abhijeetsodlan"
-                target="_blank"
-                className="hover:text-white transition"
-              >
-                <FaInstagram />
-              </a>
-            </div>
-
-           
-
-            {/* Description */}
-            <p className="text-gray-400 text-md leading-relaxed max-w-3xl">
-              I’m 22 with 1.5+ years of experience building web and mobile apps.
-              I build full-stack web applications using Next.js and Express.js,
-              and mobile apps with React Native. Outside of tech, I enjoy
-              farming, tractors, and reading—especially books by Osho. (
-              <em>oshopaglu</em>).
-            </p>
-
-             {/* Resume */}
-            <div>
-              <a
-                href="/Abhijeet_Resume.pdf"
-                target="_blank"
+                key={label}
+                href={href}
+                target={href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
+                aria-label={label}
+                className="hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:scale-110 hover:-translate-y-0.5"
+                style={{ display: "inline-block" }}
               >
-                View Resume
+                {icon}
               </a>
-            </div>
+            ))}
           </div>
 
-          {/* Profile Image */}
-          <div className="shrink-0">
-            <img
-              src="https://pbs.twimg.com/profile_images/1917982995052691456/SmbTOeLq_400x400.jpg"
-              alt="Abhijeet Sodlan"
-              className="w-32 h-32 rounded-xl object-cover grayscale border border-gray-700 shadow-lg"
-            />
+          {/* Description */}
+          <p className="text-[15px] leading-relaxed max-w-xl animate-fade-in-up delay-300 text-gray-500 dark:text-gray-400">
+            I build things for the web and mobile. Next.js on the frontend, Express on the
+            backend, React Native for the phone. 22 years old, 1.5 years in, still going.
+            Off-screen, I'm into farming, loud tractors, and quiet Osho books.{" "}
+            <em className="text-gray-400 dark:text-gray-500">(oshopaglu)</em>
+          </p>
+
+          {/* Resume */}
+          <div className="animate-fade-in-up delay-400">
+            <a
+              href="/Abhijeet_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold active:scale-95 transition-all duration-200
+                bg-gray-900 text-white hover:bg-gray-700
+                dark:bg-white dark:text-black dark:hover:bg-gray-100"
+            >
+              View Resume
+            </a>
           </div>
-        </div>
       </div>
     </section>
   );
