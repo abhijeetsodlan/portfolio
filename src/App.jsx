@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa6";
 import HeaderSection from "./components/HeaderSection";
 import ProjectCard from "./components/ProjectCard";
@@ -15,7 +15,7 @@ function ThemeToggle({ isDark, toggle }) {
     setSpinning(true);
     toggle();
     setTimeout(() => setSpinning(false), 450);
-  }
+  };
 
   return (
     <button
@@ -33,8 +33,21 @@ function ThemeToggle({ isDark, toggle }) {
   );
 }
 
+const QUOTE = "A man truly becomes a man the day he accepts that he alone is responsible for whatever he is.";
+
 const App = () => {
   const { isDark, toggle } = useTheme();
+  const [showIntro, setShowIntro] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const introTimer = setTimeout(() => {
+      setShowIntro(false);
+      setShowContent(true);
+    }, 2200);
+
+    return () => clearTimeout(introTimer);
+  }, []);
 
   return (
     <div
@@ -49,40 +62,51 @@ const App = () => {
         transition: "background-color 0.3s ease",
       }}
     >
-      {/* Dot grid */}
-      <div
-        className="pointer-events-none fixed inset-0"
-        style={{
-          backgroundImage: `radial-gradient(circle, rgba(var(--dot-color), var(--dot-opacity)) 1px, transparent 1px)`,
-          backgroundSize: "32px 32px",
-        }}
-      />
+      {showIntro && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center px-6 sm:px-10 animate-fade-in">
+          <p className="max-w-2xl text-base sm:text-lg italic leading-relaxed text-gray-500 dark:text-gray-400 border-l-2 border-orange-400/50 pl-4 animate-fade-in-up">
+            "{QUOTE}"
+            <span className="not-italic block mt-3 text-xs text-orange-400/70 tracking-widest uppercase">- Osho</span>
+          </p>
+        </div>
+      )}
 
-      <ThemeToggle isDark={isDark} toggle={toggle} />
+      <div className={showContent ? "animate-fade-in-up" : "opacity-0 pointer-events-none select-none"}>
+        {/* Dot grid */}
+        <div
+          className="pointer-events-none fixed inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle, rgba(var(--dot-color), var(--dot-opacity)) 1px, transparent 1px)`,
+            backgroundSize: "32px 32px",
+          }}
+        />
 
-      <div className="relative max-w-4xl mx-auto space-y-2">
-        <HeaderSection />
-        <hr className="border-gray-200 dark:border-[#1a1a1a]" />
-        <ProjectCard />
-        <hr className="border-gray-200 dark:border-[#1a1a1a]" />
-        <AchievementsSection />
-        <hr className="border-gray-200 dark:border-[#1a1a1a]" />
-        <GithubContributionsSection />
-        <hr className="border-gray-200 dark:border-[#1a1a1a]" />
-        <ExperienceSection />
+        <ThemeToggle isDark={isDark} toggle={toggle} />
+
+        <div className="relative max-w-4xl mx-auto space-y-2">
+          <HeaderSection />
+          <hr className="border-gray-200 dark:border-[#1a1a1a]" />
+          <ProjectCard />
+          <hr className="border-gray-200 dark:border-[#1a1a1a]" />
+          <AchievementsSection />
+          <hr className="border-gray-200 dark:border-[#1a1a1a]" />
+          <GithubContributionsSection />
+          <hr className="border-gray-200 dark:border-[#1a1a1a]" />
+          <ExperienceSection />
+        </div>
+
+        {/* Osho quote */}
+        <div className="relative max-w-4xl mx-auto px-6 sm:px-10 py-10">
+          <p className="text-sm italic leading-relaxed text-gray-400 dark:text-gray-500 border-l-2 border-orange-400/50 pl-4">
+            "{QUOTE}"
+            <span className="not-italic block mt-2 text-xs text-orange-400/70 tracking-widest uppercase">- Osho</span>
+          </p>
+        </div>
+
+        <footer className="relative text-center text-xs py-8 tracking-widest uppercase text-gray-400 dark:text-gray-600">
+          (c) 2026
+        </footer>
       </div>
-
-      {/* Osho quote */}
-      <div className="relative max-w-4xl mx-auto px-6 sm:px-10 py-10">
-        <p className="text-sm italic leading-relaxed text-gray-400 dark:text-gray-500 border-l-2 border-orange-400/50 pl-4">
-          "A man truly becomes a man the day he accepts that he alone is responsible for what he is."
-          <span className="not-italic block mt-2 text-xs text-orange-400/70 tracking-widest uppercase">— Osho</span>
-        </p>
-      </div>
-
-      <footer className="relative text-center text-xs py-8 tracking-widest uppercase text-gray-400 dark:text-gray-600">
-        © 2026
-      </footer>
     </div>
   );
 };
