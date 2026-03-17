@@ -19,6 +19,13 @@ const projects = [
     type: "personal",
   },
   {
+    image: "/images/spaceinvadersLogo.png",
+    title: "SpaceInvaders",
+    role: "Classic shooting Game",
+    link: "https://spaceinvaderrs.netlify.app",
+    type: "personal",
+  },
+  {
     image: "/images/codetoimgLogo.png",
     title: "ShareCode",
     role: "Code to Image Tool",
@@ -26,10 +33,10 @@ const projects = [
     type: "personal",
   },
   {
-    image: "/images/spaceinvadersLogo.png",
-    title: "SpaceInvaders",
-    role: "Classic shooting Game",
-    link: "https://abhijeetsodlan.github.io/SpaceInvaders/",
+    image: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
+    title: "avci",
+    role: "Anti valentine commision of india",
+    link: "https://avci.lol",
     type: "personal",
   },
   {
