@@ -19,6 +19,15 @@ export default function HeaderSection() {
   return (
     <section className="rounded-2xl p-6 sm:p-10">
       <div className="space-y-5">
+          {/* Avatar */}
+          <div className="animate-fade-in-up">
+            <img
+              src="/images/osho.avif"
+              alt="Abhijeet"
+              className="w-16 h-16 rounded-full object-cover border-2 border-gray-200 dark:border-[#252525]"
+            />
+          </div>
+
           {/* Heading */}
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white flex items-center gap-3 animate-fade-in-up">
             Hi, I'm Abhijeet
