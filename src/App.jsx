@@ -33,7 +33,10 @@ function ThemeToggle({ isDark, toggle }) {
   );
 }
 
-const QUOTE = "A man truly becomes a man the day he accepts that he alone is responsible for whatever he is.";
+const INTRO_MESSAGE =
+  "Building with a little more care for the planet: save trees, protect green spaces, and keep climate change in the conversation.";
+const OSHO_QUOTE =
+  "A man truly becomes a man the day he accepts that he alone is responsible for whatever he is.";
 
 const App = () => {
   const { isDark, toggle } = useTheme();
@@ -44,7 +47,7 @@ const App = () => {
     const introTimer = setTimeout(() => {
       setShowIntro(false);
       setShowContent(true);
-    }, 2200);
+    }, 3600);
 
     return () => clearTimeout(introTimer);
   }, []);
@@ -64,9 +67,16 @@ const App = () => {
     >
       {showIntro && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center px-6 sm:px-10 animate-fade-in">
-          <p className="max-w-2xl text-base sm:text-lg italic leading-relaxed text-gray-500 dark:text-gray-400 border-l-2 border-orange-400/50 pl-4 animate-fade-in-up">
-            "{QUOTE}"
-            <span className="not-italic block mt-3 text-xs text-orange-400/70 tracking-widest uppercase">- Osho</span>
+          <p className="max-w-2xl text-base sm:text-lg leading-relaxed text-emerald-700 dark:text-emerald-200 border-l-2 border-emerald-400/60 pl-4 animate-fade-in-up">
+            {INTRO_MESSAGE}
+            <a
+              href="https://earthsos.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block mt-3 text-xs text-emerald-500/80 dark:text-emerald-300/70 tracking-widest uppercase hover:text-emerald-700 dark:hover:text-emerald-200 transition-colors"
+            >
+              Explore EarthSOS Project
+            </a>
           </p>
         </div>
       )}
@@ -98,7 +108,7 @@ const App = () => {
         {/* Osho quote */}
         <div className="relative max-w-4xl mx-auto px-6 sm:px-10 py-10">
           <p className="text-sm italic leading-relaxed text-gray-400 dark:text-gray-500 border-l-2 border-orange-400/50 pl-4">
-            "{QUOTE}"
+            "{OSHO_QUOTE}"
             <span className="not-italic block mt-2 text-xs text-orange-400/70 tracking-widest uppercase">- Osho</span>
           </p>
         </div>

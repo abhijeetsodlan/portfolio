@@ -5,6 +5,8 @@ import {
   FaInstagram,
   FaRegEnvelope,
   FaGithub,
+  FaLeaf,
+  FaArrowUpRightFromSquare,
 } from "react-icons/fa6";
 
 const socials = [
@@ -87,8 +89,31 @@ export default function HeaderSection() {
           <em className="text-gray-400 dark:text-gray-500">(oshopaglu)</em>
         </p>
 
+        {/* Climate note */}
+        <div
+          className="inline-flex max-w-xl items-start gap-3 rounded-2xl border border-emerald-200/70 bg-emerald-50/70 px-4 py-3 text-sm leading-relaxed text-emerald-800 animate-fade-in-up delay-400
+            dark:border-emerald-500/15 dark:bg-emerald-500/10 dark:text-emerald-200"
+        >
+          <FaLeaf className="mt-0.5 shrink-0 text-emerald-500 dark:text-emerald-300" />
+          <div>
+            <p>
+              Building with a little more care for the planet: save trees,
+              protect green spaces, and keep climate change in the conversation.
+            </p>
+            <a
+              href="https://earthsos.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 transition-colors hover:text-emerald-900 dark:text-emerald-300 dark:hover:text-emerald-100"
+            >
+              Visit EarthSOS
+              <FaArrowUpRightFromSquare className="text-[10px]" />
+            </a>
+          </div>
+        </div>
+
         {/* Resume */}
-        <div className="animate-fade-in-up delay-400">
+        <div className="animate-fade-in-up delay-500">
           <a
             href="/Abhijeet_Resume.pdf"
             target="_blank"

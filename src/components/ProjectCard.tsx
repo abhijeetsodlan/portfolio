@@ -4,6 +4,14 @@ import { useInView } from "../hooks/useInView";
 
 const projects = [
   {
+    image: "/images/earthsosLogo.svg",
+    title: "earthSOS",
+    role: "Climate awareness project with facts, impact numbers, climate-change consequences, and a carbon-footprint calculator.",
+    webLink: "https://earthsos.netlify.app",
+    type: "personal",
+    tags: ["Next.js", "Climate", "Carbon Calculator"],
+  },
+  {
     image: "/images/prelistLogo.png",
     title: "prelist.live",
     role: "Tool for founders and businesses — collect waitlist emails with zero backend setup.",
