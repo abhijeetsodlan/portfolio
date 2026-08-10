@@ -12,6 +12,14 @@ const projects = [
     tags: ["Next.js", "Climate", "Carbon Calculator"],
   },
   {
+    image: "/images/redNotebookLogo.svg",
+    title: "The Red NoteBook",
+    role: "Blog website where I vomit my thoughts and opinions on different topics.",
+    webLink: "https://rednotebook.netlify.app",
+    type: "personal",
+    tags: ["Blog", "Writing"],
+  },
+  {
     image: "/images/prelistLogo.png",
     title: "prelist.live",
     role: "Tool for founders and businesses — collect waitlist emails with zero backend setup.",

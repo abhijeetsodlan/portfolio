@@ -5,8 +5,6 @@ import {
   FaInstagram,
   FaRegEnvelope,
   FaGithub,
-  FaLeaf,
-  FaArrowUpRightFromSquare,
   FaChevronDown,
 } from "react-icons/fa6";
 
@@ -105,40 +103,6 @@ export default function HeaderSection() {
           I build for the web and mobile. React.js, Next.js, Node.js, React Native.
           22 with 2+ years in the field. When I'm not at a screen, I'm on a
           farm, usually near a loud tractor or a quiet Osho book.{" "}
-        </p>
-
-        {/* Climate note */}
-        <div
-          className="inline-flex max-w-xl items-start gap-3 rounded-2xl border border-emerald-200/70 bg-emerald-50/70 px-4 py-3 text-sm leading-relaxed text-emerald-800 animate-fade-in-up delay-400
-            dark:border-emerald-500/15 dark:bg-emerald-500/10 dark:text-emerald-200"
-        >
-          <FaLeaf className="mt-0.5 shrink-0 text-emerald-500 dark:text-emerald-300" />
-          <div>
-            <p>
-              Building with a little more care for the planet: save trees,
-              protect green spaces, and keep climate change in the conversation.
-            </p>
-            <a
-              href="https://earthsos.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 transition-colors hover:text-emerald-900 dark:text-emerald-300 dark:hover:text-emerald-100"
-            >
-              Visit EarthSOS
-              <FaArrowUpRightFromSquare className="text-[10px]" />
-            </a>
-          </div>
-        </div>
-        <p className="max-w-xl text-sm leading-relaxed text-gray-500 animate-fade-in-up delay-500 dark:text-gray-400">
-          I have a blog website where I vomit my thoughts and opinions on different topics, here is the website link: {" "}
-          <a
-            href="https://rednotebook.netlify.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-red-600 transition-colors hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
-          >
-            The Red NoteBook
-          </a>
         </p>
         {SHOW_RESUME && (
           <div className="animate-fade-in-up delay-500">
