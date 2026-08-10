@@ -25,6 +25,7 @@ const projects = [
     title: "regrets.in",
     role: "A platform where people anonymously share their regrets, read others' stories, and engage through likes, replies, and shares.",
     webLink: "https://regrets.in",
+    status: "Temporarily Unavailable",
     type: "personal",
     tags: ["React.js", "Node.js", "MongoDB"],
   },
@@ -37,20 +38,22 @@ const projects = [
     tags: ["React.js"],
   },
   {
-    image: "/images/codetoimgLogo.png",
-    title: "ShareCode",
-    role: "Turn code snippets into shareable, beautifully styled images — no design tools needed.",
-    webLink: "https://sharecodee.netlify.app/",
-    type: "personal",
-    tags: ["React.js", "html2canvas"],
+    image: "/images/smartinoutLogo.jpg",
+    title: "SmartInoutNavigation App",
+    role: "Campus navigation app that helps students, staff, and visitors search buildings, choose routes, and view time, distance, and accessibility-friendly paths.",
+    appStore: "https://apps.apple.com/in/app/smartinoutnavigation/id6770422494",
+    playStore: "https://play.google.com/store/apps/details?id=com.campusnavigator.app&pcampaignid=web_share",
+    type: "client",
+    tags: ["Navigation", "Campus Map"],
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
-    title: "avci",
-    role: "Satirical site for the Anti-Valentine Commission of India, A humorous take on Valentine's Day culture.",
-    webLink: "https://avci.lol",
-    type: "personal",
-    tags: ["Next.js"],
+    image: "/images/divineLogo.jpg",
+    title: "TreatmentIsDivine",
+    role: "Support-services app for appointments, resources, community posts, notifications, feedback, emergency help, and profile management in one place.",
+    appStore: "https://apps.apple.com/in/app/treatmentisdivine/id6772889506",
+    playStore: "coming-soon",
+    type: "client",
+    tags: ["React Native", "Health & Fitness"],
   },
   {
     image: "https://ac5d.com/wp-content/uploads/2025/01/logoo-scaled.jpg",
@@ -60,23 +63,6 @@ const projects = [
     playStore: "https://play.google.com/store/apps/details?id=com.ac5dconstruction",
     type: "client",
     tags: ["React Native"],
-  },
-  {
-    image: "/images/responderLogo.webp",
-    title: "Wellness Responder",
-    role: "School communication and incident reporting app with push notifications and role-based access control.",
-    appStore: "https://apps.apple.com/us/app/wellness-responder/id1574957321",
-    playStore: "coming-soon",
-    type: "client",
-    tags: ["React Native", "Node.js"],
-  },
-  {
-    image: "/images/divineLogo.png",
-    title: "Divine Lightfoot App",
-    role: "Wellness-focused mobile app with scalable screens and integrated backend APIs for health service engagement.",
-    status: "Coming Soon",
-    type: "client",
-    tags: ["React Native", "Laravel"],
   },
 ];
 
@@ -177,6 +163,11 @@ function ProjectGroup({
               {project.status === "Coming Soon" && (
                 <span className="text-[11px] font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-400/10 px-2 py-0.5 rounded-full">
                   Coming Soon
+                </span>
+              )}
+              {project.status === "Temporarily Unavailable" && (
+                <span className="text-[11px] font-medium text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-400/10 px-2 py-0.5 rounded-full">
+                  Temporarily Unavailable
                 </span>
               )}
             </div>

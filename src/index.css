@@ -67,6 +67,10 @@ body {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
+@keyframes scrollCue {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
 @keyframes iconSpin {
   0%   { transform: rotate(0deg)   scale(1);   opacity: 1; }
   40%  { transform: rotate(180deg) scale(0.4); opacity: 0; }
@@ -96,6 +100,9 @@ body {
 }
 .animate-icon-spin {
   animation: iconSpin 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.animate-scroll-cue {
+  animation: scrollCue 1.2s ease-in-out infinite;
 }
 
 /* ── Stagger delays ── */

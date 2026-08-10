@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaXTwitter,
   FaLinkedin,
@@ -7,6 +7,7 @@ import {
   FaGithub,
   FaLeaf,
   FaArrowUpRightFromSquare,
+  FaChevronDown,
 } from "react-icons/fa6";
 
 const socials = [
@@ -37,7 +38,25 @@ const socials = [
   },
 ];
 
+const SHOW_RESUME = false;
+
 export default function HeaderSection() {
+  const [showScrollCue, setShowScrollCue] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollCue(window.scrollY < 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToContent = () => {
+    window.scrollTo({ top: window.innerHeight * 0.85, behavior: "smooth" });
+  };
+
   return (
     <section className="rounded-2xl p-6 sm:p-10">
       <div className="space-y-5">
@@ -84,9 +103,8 @@ export default function HeaderSection() {
         {/* Description */}
         <p className="text-[15px] leading-relaxed max-w-xl animate-fade-in-up delay-300 text-gray-500 dark:text-gray-400">
           I build for the web and mobile. React.js, Next.js, Node.js, React Native.
-          21 with 1.5+ years in the field. When I'm not at a screen, I'm on a
+          22 with 2+ years in the field. When I'm not at a screen, I'm on a
           farm, usually near a loud tractor or a quiet Osho book.{" "}
-          <em className="text-gray-400 dark:text-gray-500">(oshopaglu)</em>
         </p>
 
         {/* Climate note */}
@@ -111,21 +129,42 @@ export default function HeaderSection() {
             </a>
           </div>
         </div>
-
-        {/* Resume */}
-        <div className="animate-fade-in-up delay-500">
+        <p className="max-w-xl text-sm leading-relaxed text-gray-500 animate-fade-in-up delay-500 dark:text-gray-400">
+          I have a blog website where I vomit my thoughts and opinions on different topics, here is the website link: {" "}
           <a
-            href="/Abhijeet_Resume.pdf"
+            href="https://rednotebook.netlify.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold active:scale-95 transition-all duration-200
-                bg-gray-900 text-white hover:bg-gray-700
-                dark:bg-white dark:text-black dark:hover:bg-gray-100"
+            className="font-medium text-red-600 transition-colors hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
           >
-            View Resume
+            The Red NoteBook
           </a>
-        </div>
+        </p>
+        {SHOW_RESUME && (
+          <div className="animate-fade-in-up delay-500">
+            <a
+              href="/Abhijeet_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold active:scale-95 transition-all duration-200
+                  bg-gray-900 text-white hover:bg-gray-700
+                  dark:bg-white dark:text-black dark:hover:bg-gray-100"
+            >
+              View Resume
+            </a>
+          </div>
+        )}
       </div>
+      <button
+        type="button"
+        onClick={scrollToContent}
+        aria-label="Scroll down"
+        className={`mx-auto mt-10 flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-gray-300 hover:text-gray-800 dark:border-[#252525] dark:text-gray-500 dark:hover:border-[#3a3a3a] dark:hover:text-white ${
+          showScrollCue ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        <FaChevronDown className="animate-scroll-cue" />
+      </button>
     </section>
   );
 }
