@@ -6,6 +6,8 @@ import ExperienceSection from "./components/ExperienceSection";
 import AchievementsSection from "./components/AchievementsSection";
 import GithubContributionsSection from "./components/GithubContributionsSection";
 import { useTheme } from "./hooks/useTheme";
+import { useWorldNavigation } from "./hooks/useWorldNavigation";
+import BeyondScreen from "./components/BeyondScreen";
 
 const SHOW_ACHIEVEMENTS = false;
 const SHOW_EXPERIENCE = false;
@@ -99,8 +101,18 @@ function ContactSection() {
 
 const App = () => {
   const { isDark, toggle } = useTheme();
+  const { beyond, transition, travel } = useWorldNavigation();
 
   return (
+    <>
+      <div className="world-controls">
+        <button id="world-toggle" className="world-toggle" disabled={!!transition} onClick={() => travel(!beyond)} aria-label={beyond ? "Return to portfolio" : "Explore Beyond the screen"} aria-expanded={beyond}>
+          <span className="world-toggle-orbit" aria-hidden="true">✳</span><span>{beyond ? "Back to the screen" : "Beyond the screen"}</span>
+        </button>
+        <ThemeToggle isDark={isDark} toggle={toggle} />
+      </div>
+      {beyond && <div inert={transition ? true : undefined}><BeyondScreen onReturn={() => travel(false)} /></div>}
+      <div hidden={beyond} inert={transition ? true : undefined}>
     <div
       className="min-h-screen font-mono py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden
         text-gray-800 dark:text-[#e5e5e5]"
@@ -122,8 +134,6 @@ const App = () => {
             backgroundSize: "32px 32px",
           }}
         />
-
-        <ThemeToggle isDark={isDark} toggle={toggle} />
 
         <div className="relative max-w-4xl mx-auto space-y-2">
           <HeaderSection />
@@ -160,6 +170,13 @@ const App = () => {
         </footer>
       </div>
     </div>
+      </div>
+      {transition && <div className={`world-portal world-portal-${transition}`} role="status" aria-live="polite">
+        <div className="portal-stars" aria-hidden="true" />
+        <div className="portal-rings" aria-hidden="true">{Array.from({ length: 6 }, (_, index) => <i key={index} style={{ '--ring': index }} />)}</div>
+        <div className="portal-message"><span>✳</span><p>{transition === 'enter' ? 'A little further from the screen.' : 'Bringing a little quiet back.'}</p><small>{transition === 'enter' ? 'ENTERING THE OTHER SIDE' : 'RETURNING TO THE SCREEN'}</small></div>
+      </div>}
+    </>
   );
 };
 
